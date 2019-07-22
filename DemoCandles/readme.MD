@@ -12,6 +12,6 @@ price of a ScentedCandle object at $3 per inch. Write an application that instan
 an object of each type and displays the details. Save the files as Candle.java,
 ScentedCandle.java, and DemoCandles.java.
 
-Cuortesy: Java Programming
-Author: Joyce Farrell
+Cuortesy: Java Programming,
+Author: Joyce Farrell,
 Ch#10 (Introduction to Inheritance), Ex no: 2

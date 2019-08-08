@@ -20,7 +20,7 @@ public class PremiumSugarSmashPlayer extends SugarSmashPlayer{
         super();
     }
     
-    private int level = super.getLevel() + 40;
+    private int level = super.SCORE_SIZE + 40;
     private int[] scores = new int[level-1];
     
 

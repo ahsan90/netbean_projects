@@ -24,6 +24,7 @@ public class DemoSugarSmash {
             + "- X-eXit\n"
             + "-------------------------\n"
             + "Option-->";
+
     public static ArrayList<SugarSmashPlayer> storeGamesPlayed = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -57,16 +58,34 @@ public class DemoSugarSmash {
             
             case "1":
                 SugarSmashPlayer aSugarSmashPlayer = new SugarSmashPlayer();
+                aSugarSmashPlayer.getScreenNameFromUser();
+                
                 //aSugarSmashPlayer.setScreenName();
-                int temp = aSugarSmashPlayer.setScore(aSugarSmashPlayer.getSingleScore(), aSugarSmashPlayer.getLevel());
-                if(temp != -1){
-                    storeGamesPlayed.add(aSugarSmashPlayer);
+                int temp = 0;
+                while(temp != -1){
+                    aSugarSmashPlayer.getInfoFromUser();
+                    temp = aSugarSmashPlayer.setScore(aSugarSmashPlayer.getSingleScore(), aSugarSmashPlayer.getLevel());
+                    if(aSugarSmashPlayer.getLevel() == 10){
+                        System.out.println("Congratulation" + aSugarSmashPlayer.getScreenName() + " you have completed the all levels of the game!! \nThe scores are as follow: ");
+                        temp = -1;
+                    }
+                }
+//                if(temp != -1){
+//                    storeGamesPlayed.add(aSugarSmashPlayer);
+//                }
+                //int[] myInt = aSugarSmashPlayer.getScores();
+                for (int i = 0; i < aSugarSmashPlayer.getScores().length; i++) {
+                    System.out.print(aSugarSmashPlayer.getScores()[i]+" ");
                 }
                 break;
             case "2":
                 PremiumSugarSmashPlayer aPremiumSugarSmashPlayer = new PremiumSugarSmashPlayer();
+                aPremiumSugarSmashPlayer.getScreenNameFromUser();
+                aPremiumSugarSmashPlayer.getInfoFromUser();
                 aPremiumSugarSmashPlayer.setScore(aPremiumSugarSmashPlayer.getSingleScore(), aPremiumSugarSmashPlayer.getLevel());
-                storeGamesPlayed.add(aPremiumSugarSmashPlayer);
+                for (int i = 0; i < aPremiumSugarSmashPlayer.getScores().length; i++) {
+                    System.out.print(aPremiumSugarSmashPlayer.getScores()[i]+" ");
+                }
                 break;
             case "3":
                 for(SugarSmashPlayer current : storeGamesPlayed){
@@ -81,14 +100,4 @@ public class DemoSugarSmash {
                 Util.display("Invalid entry");
         }
     }
-    
-    public static boolean isValidScore(SugarSmashPlayer smp){
-        boolean flag = false;
-        if(!flag){
-            smp.setScore(smp.getSingleScore(), smp.getLevel());
-            flag = true;
-        }
-        return flag;
-    }
-
 }

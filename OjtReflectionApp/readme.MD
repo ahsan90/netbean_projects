@@ -6,7 +6,7 @@ Business Requirement 1 (Menu option A):
 
 When the user selects ‘A’ (for Add) - allow the user to enter the student id, name, and reflection text.  No validation is required and the user can be expected to enter the right values.  An object oriented solution is expected.  An OjtReflection class should be used to contain the attributes.
 
-When all the entries are added to an ArrayList<OjtReflection> the details should be written to a file (c:\cis2232\reflection.csv).  This can happen when the user exits the program.  Each field should be separated by a comma and written to the file on a line per reflection.  (Note:  if you prefer to use json instead of comma separated...that's fine too!)
+When all the entries are added to an ArrayList<OjtReflection> the details should be written to a file (c:\cis2232\reflection.json).  This can happen when the user exits the program.  Each field should be separated by a comma and written to the file on a line per reflection.  (Note:  if you prefer to use json instead of comma separated...that's fine too!)
 
 Business Requirement 2:
 
